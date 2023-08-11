@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const addEventBtn = document.getElementById("addEventBtn");
+    const addEventButton = document.getElementById("addEventButton");
     const eventsContainer = document.getElementById("events");
     const storedEvents = JSON.parse(localStorage.getItem("events")) || [];
 
@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		//format time to be "Month Day, Year - Hour:Minute AM/PM"
 		const eventTime = new Date(eventData.time);
 		const timeRefinement = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: '2-digit' };
-		const formattedTime = eventTime.toLocaleDateString('en-US', timeRefinement).replace(' at ', ' - ');;
+		const formattedTime = eventTime.toLocaleDateString('en-US', timeRefinement).replace(' at ', ' - ');
 		
         eventElement.className = "event";
         eventElement.innerHTML = `
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
     storedEvents.sort((a, b) => a.time - b.time);
     storedEvents.forEach(createEventElement);
 
-    addEventBtn.addEventListener("click", () => {
+    addEventButton.addEventListener("click", () => {
         const eventName = document.getElementById("eventName").value;
         const eventDesc = document.getElementById("eventDesc").value;
         const eventTime = new Date(document.getElementById("eventTime").value);
@@ -83,35 +83,35 @@ document.addEventListener("DOMContentLoaded", () => {
             const eventTime = parseInt(countdownElement.getAttribute("data-time"));
             const timeRemaining = eventTime - now;
 
-                const seconds = Math.floor(timeRemaining / 1000);
-                const minutes = Math.floor(seconds / 60);
-                const hours = Math.floor(minutes / 60);
-                const days = Math.floor(hours / 24);
-				const years = Math.floor(days / 365);
+            const seconds = Math.floor(timeRemaining / 1000);
+            const minutes = Math.floor(seconds / 60);
+            const hours = Math.floor(minutes / 60);
+            const days = Math.floor(hours / 24);
+			const years = Math.floor(days / 365);
 
-				const remainingDays = days % 365;
-                const remainingHours = hours % 24;
-                const remainingMinutes = minutes % 60;
-                const remainingSeconds = seconds % 60;
+			const remainingDays = days % 365;
+            const remainingHours = hours % 24;
+            const remainingMinutes = minutes % 60;
+            const remainingSeconds = seconds % 60;
 
-                let countdownText = "";
-				if (years > 0) {
-					countdownText += `${years}y `;
-				}
-                if (remainingDays > 0) {
-                    countdownText += `${remainingDays}d `;
-                }
-                if (remainingHours > 0) {
-                    countdownText += `${remainingHours}h `;
-                }
-                if (remainingMinutes > 0) {
-                    countdownText += `${remainingMinutes}m `;
-                }
-				if (remainingSeconds > 0) {
-					countdownText += `${remainingSeconds}s `;
-				}
+            let countdownText = "";
+			if (years > 0) {
+				countdownText += `${years}y `;
+			}
+            if (remainingDays > 0) {
+                countdownText += `${remainingDays}d `;
+            }
+            if (remainingHours > 0) {
+                countdownText += `${remainingHours}h `;
+            }
+            if (remainingMinutes > 0) {
+                countdownText += `${remainingMinutes}m `;
+            }
+			if (remainingSeconds > 0) {
+				countdownText += `${remainingSeconds}s `;
+			}
 
-                countdownElement.textContent = countdownText;
+            countdownElement.textContent = countdownText;
 			
 			if (timeRemaining <= 0) {
 				//dark red
@@ -126,11 +126,11 @@ document.addEventListener("DOMContentLoaded", () => {
 				//yellow
 				countdownElement.parentNode.style.backgroundColor = "#E1FF66";
 			} else {
-				//white/gray
+				//gray
                countdownElement.parentNode.style.backgroundColor = "#E4DFDF";
             }
         });
     };
-
+	
     setInterval(updateCountdowns, 1000);
 });
