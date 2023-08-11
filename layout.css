@@ -1,0 +1,62 @@
+body {
+    font-family: Trebuchet MS;
+	background-color: #FFFBD7;
+}
+
+h1 {
+	text-decoration: underline;
+	font-weight: bold;
+	font-size: 28pt;
+}
+
+.empty-box {
+	background-image: url(https://creazilla-store.fra1.digitaloceanspaces.com/emojis/47307/locomotive-emoji-clipart-xl.png);
+	background-size: cover;
+    min-height: 184px; 
+	width: 200px;
+	float: left;
+    margin-right: 10px;
+    padding: 10px;
+}
+
+.container {
+    overflow-x: scroll;
+    white-space: nowrap;
+    padding: 30px;
+	//padding-left: 250px;
+	padding-bottom: 0px;
+}
+.container::-webkit-scrollbar {
+	width: 5px;
+	height: 8px;
+	background-color: #4E3524;
+}
+
+.event {
+    display: inline-block;
+    width: 200px;
+    margin-right: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+	overflow: auto;
+}
+
+.add-event {
+    margin-top: 20px;
+	margin-left: 30px;
+    padding: 10px;
+    //border-top: 7px solid #999999;
+    display: flex;
+	justify-content: auto;
+	gap: 7px;
+}
+
+.add-event input,
+.add-event button {
+    padding: 5px;
+}
+
+.add-event input[type="datetime-local"] {
+    width: 175px;
+}
