@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>TimeTracks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="layout.css">
+	<h1 style="color: #4E3524;">TimeTracks</h1>
+</head>
+<body>
+    <div class="container">
+		<div class="empty-box"></div>
+        <div class="events" id="events">
+            <!-- User-created events go here -->
+        </div>
+    </div>
+    <p class="add-event">
+	<span><input type="text" id="eventName" placeholder="Event Name"></span>
+	<span><input type="text" id="eventDesc" placeholder="Event Description"></span>
+	<span><input type="datetime-local" id="eventTime"></span>
+	<span><button id="addEventButton">Add Event</button></span>
+	</p>
+    <script src="main.js"></script>
+</body>
+</html>
