@@ -1,7 +1,7 @@
 # TimeTracks
 A website which allows users to create and manage events, as well as view their individual timers.
 
-Deployed by GitHub Pages: https://fullskele.github.io/TimeTracks/
+Deployed by GitHub Pages: https://jacobmaj.github.io/TimeTracks/
 
 
 Features: 
